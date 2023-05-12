@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool isOnGround;
     public float JumpForce = 15.0f;
     public bool facingRight;
+    public GameObject projectileFire;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
           isOnGround = false;}
     
       if (Input.GetKeyDown(KeyCode.F)){
-        
+        Instantiate(projectileFire, transform.position, projectileFire.transform.rotation);
     }
 
     }
