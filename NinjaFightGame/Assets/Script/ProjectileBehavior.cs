@@ -9,6 +9,7 @@ public class ProjectileBehavior : MonoBehaviour
     public bool facingRight;
     private PlayerController playerController;
     public float forwardInput = 15.0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,8 @@ public class ProjectileBehavior : MonoBehaviour
         }
         if(facingRight == false)
         {
-           projectileRB.AddForce(transform.forward * -speed); 
+           transform.Rotate(Vector3.up * 180);
+           projectileRB.AddForce(transform.forward * speed); 
         }
     }
 
