@@ -23,26 +23,34 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      float forwardInput = Input.GetAxis("Horizontal");
-        playerRB.AddForce(transform.forward * -forwardInput * speed);
+    
     
       if (Input.GetKeyDown(KeyCode.A)){
-          facingRight = false;
+         transform.Rotate(Vector3.up * 180);
       }
       if (Input.GetKeyDown(KeyCode.D)){
-          facingRight = true;
+         transform.Rotate(Vector3.up * 180);
       }
+      float forwardInput = Input.GetAxis("Horizontal");
+        playerRB.AddForce(transform.forward * forwardInput * speed);
       if (Input.GetKeyDown(KeyCode.Space)) 
         {
           playerRB.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
           isOnGround = false;}
     
       if (Input.GetKeyDown(KeyCode.F)){
-        if(element);
+        if(element == true);
         {
-          Instantiate(projectileFire, transform.position, projectileFire.transform.rotation);
+          if(facingRight == false)
+          {
+         
+          }
+          if(facingRight == true)
+          {
+          
+          }
         }
-        if(!element);
+        if(element == false);
         {
           Instantiate(projectileLightning, transform.position, projectileLightning.transform.rotation);
         }
