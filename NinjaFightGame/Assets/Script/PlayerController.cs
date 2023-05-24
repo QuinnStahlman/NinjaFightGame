@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject projectileFire;
     public GameObject projectileLightning;
     public bool element;
+    private float angle = 180;
 
 
     // Start is called before the first frame update
@@ -23,20 +24,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+    float forwardInput = Input.GetAxis("Vertical");
+    playerRB.AddForce(transform.forward * forwardInput * speed);
     
       if (Input.GetKeyDown(KeyCode.A)){
-         transform.Rotate(Vector3.up * 180);
+        transform.RotateAround(transform.position, Vector3.up, angle);
       }
       if (Input.GetKeyDown(KeyCode.D)){
-         transform.Rotate(Vector3.up * 180);
-      }
-      float forwardInput = Input.GetAxis("Horizontal");
+        transform.RotateAround(transform.position, Vector3.up, angle);
         playerRB.AddForce(transform.forward * forwardInput * speed);
+      }
+      
       if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-          playerRB.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
-          isOnGround = false;}
+      {
+        playerRB.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+        isOnGround = false;}
     
       if (Input.GetKeyDown(KeyCode.F)){
         if(element == true);
