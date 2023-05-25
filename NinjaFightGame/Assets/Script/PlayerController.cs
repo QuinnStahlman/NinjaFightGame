@@ -27,12 +27,21 @@ public class PlayerController : MonoBehaviour
     float forwardInput = Input.GetAxis("Vertical");
     playerRB.AddForce(transform.forward * forwardInput * speed);
     
-      if (Input.GetKeyDown(KeyCode.A)){
-        transform.RotateAround(transform.position, Vector3.up, angle);
+      if (Input.GetKeyDown(KeyCode.A))
+      {
+        if (transform.rotation.y >= 170 && transform.rotation.y <= 190)
+        {
+          transform.RotateAround(transform.position, Vector3.up, angle);
+        }
+        
       }
-      if (Input.GetKeyDown(KeyCode.D)){
-        transform.RotateAround(transform.position, Vector3.up, angle);
-        playerRB.AddForce(transform.forward * forwardInput * speed);
+      if (Input.GetKeyDown(KeyCode.D))
+      {
+        if (transform.rotation.y == 0)
+        {
+          transform.RotateAround(transform.position, Vector3.up, angle);
+        }
+        
       }
       
       if (Input.GetKeyDown(KeyCode.Space)) 

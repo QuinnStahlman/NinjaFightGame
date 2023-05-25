@@ -1239,7 +1239,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 82
+  m_Constraints: 114
   m_CollisionDetection: 0
 --- !u!199 &1591967603
 ParticleSystemRenderer:
@@ -6228,6 +6228,10 @@ PrefabInstance:
     - target: {fileID: 1742406469676402547, guid: d3a47fb012f9b8646afea604ac8978f1, type: 3}
       propertyPath: m_Name
       value: Projectile 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1742406469676402547, guid: d3a47fb012f9b8646afea604ac8978f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4076251831501337157, guid: d3a47fb012f9b8646afea604ac8978f1, type: 3}
       propertyPath: lengthInSec
