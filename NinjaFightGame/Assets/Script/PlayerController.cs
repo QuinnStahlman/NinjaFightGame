@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float JumpForce = 15.0f;
     public bool facingRight;
     public GameObject projectileFire;
-    public GameObject projectileLightning;
+    /*public GameObject projectileLightning;*/
     public bool element;
     private float angle = 180;
 
@@ -61,9 +61,9 @@ public class PlayerController : MonoBehaviour
           
           }
         }
-        if(element == false);
+       if(element == false);
         {
-          Instantiate(projectileLightning, transform.position, projectileLightning.transform.rotation);
+          Instantiate(projectileFire, transform.position, projectileFire.transform.rotation);
         }
     }
 
