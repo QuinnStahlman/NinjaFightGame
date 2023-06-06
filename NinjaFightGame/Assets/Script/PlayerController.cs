@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
           
           }
         }
-       if(element == false);
+          if(element == false);
         {
           Instantiate(projectileFire, transform.position, projectileFire.transform.rotation);
         }
