@@ -9,12 +9,14 @@ public class ProjectileBehavior : MonoBehaviour
     public bool facingRight;
     private PlayerController playerController;
     public float forwardInput = 15.0f;
+    public GameObject projectile;
     
     // Start is called before the first frame update
     void Start()
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
         facingRight = playerController.facingRight;
+        Destroy(projectile, 5);
     }
 
     // Update is called once per frame
@@ -30,6 +32,5 @@ public class ProjectileBehavior : MonoBehaviour
            projectileRB.AddForce(transform.forward * speed); 
         }
     }
-
 
 }
